@@ -1,0 +1,12 @@
+-- So, it was China. A more in-depth breakdown of China's debts can be found at: https://datatopics.worldbank.org/debt/ids/country/CHN
+
+*/We now have a brief overview of the dataset and a few of its summary statistics. 
+We already have an idea of the different debt indicators in which the countries owe their debts. 
+We can dig even further to find out on an average how much debt a country owes? 
+This will give us a better sense of the distribution of the amount of debt across different indicators. */
+
+select indicator_code as debt_indicator, round(avg(debt)/1000000,2) as average_debt, indicator_name
+from international_debt
+group by debt_indicator, indicator_name
+order by average_debt DESC
+limit 10;
