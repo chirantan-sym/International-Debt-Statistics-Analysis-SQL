@@ -1,0 +1,14 @@
+*/ "Blessed are the young for they shall inherit the national debt." -Herbert Hoover
+
+Now that we have the exact total of the amounts of debt owed by several countries, 
+let's now find out the country that owns the highest amount of debt along with the amount. 
+Note that this debt is the sum of different debts owed by a country across several categories. 
+his will help to understand more about the country in terms of its socio-economic scenarios. 
+We can also find out the category in which the country owns its highest debt. But we will leave that for now. */
+
+
+select country_name, round(sum(debt)/1000000, 2) as total_debt
+from international_debt
+group by country_name
+order by total_debt desc 
+limit 1;
