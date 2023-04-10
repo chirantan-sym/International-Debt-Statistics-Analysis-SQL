@@ -8,5 +8,5 @@ This will give us a better sense of the distribution of the amount of debt acros
 select indicator_code as debt_indicator, round(avg(debt)/1000000,2) as average_debt, indicator_name
 from international_debt
 group by debt_indicator, indicator_name
-order by average_debt DESC
+order by average_debt desc
 limit 10;
